@@ -55,7 +55,7 @@ imagesc(fargbild);
 mygrey = (fargbild(:, :, 3/1));
 imwrite(mygrey, 'mygrey.png');
 %%
-b61 = mygrey(1:2:end, 1:2:end)
+mygrey(1:2:end, 1:2:end)
 
 
 
