@@ -58,6 +58,12 @@ imwrite(mygrey, 'mygrey.png');
 b61 = mygrey(1:2:end, 1:2:end);
 imwrite(b61, 'b61.png')
 %%
+bild = imread('Butterfly.tif');
+bild = im2double(bild);
+mygrey = (bild(:, :, 3/1));
+b62 = samplaner(mygrey);
+imwrite(b62, "b62.png");
+%%
 b63_nearest = imresize(b61, 2, "nearest");
 b63_linear = imresize(b61, 2, "bilinear");
 b63_cubic = imresize(b61, 2, "bicubic");
@@ -67,7 +73,7 @@ imwrite(b63_linear, 'b63_linear.png')
 imwrite(b63_cubic, 'b63_cubic.png')
 %%
 mycolorimage = imread('Butterfly.tif');
-mycolorimage = im2double(mycolorimage);
+mycolorimage = i§m2double(mycolorimage);
 temp = imresize(mycolorimage, 0.5, "nearest");
 b64 = imresize(temp, 2, "nearest");
 imwrite(b64, "b64.png");
@@ -93,8 +99,17 @@ bild1 = R + G + B;
 bild2 = R - G;
 bild3 = R + G -2*B;
 
+bild2 = imresize(bild2, 0.5, "nearest");
+bild2 = imresize(bild2, 2, "nearest");
+bild3 = imresize(bild3, 0.5, "nearest");
+bild3 = imresize(bild3, 2, "nearest");
 
+R3 = bild1/3 + bild2/2 + bild3/6;
+G3 = bild1/3 - bild2/2 + bild3/6;
+B3 = bild1/3 - bild3/3;
 
+b68 = cat(3, R3, G3, B3);
+imwrite(b68, "b68.png");
 
 
 

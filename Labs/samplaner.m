@@ -54,21 +54,21 @@ function ut=samplaner(in)
 % Since your code is supposed to an image of any size, you are suppsed
 % to find the size of the image. Use the function size in MATLAB.
 %
-[rad, kolumn] = ... % rad and kolumn are supposed to be the number of rows
+[rad, kolumn] = size(in) % rad and kolumn are supposed to be the number of rows
     % and columns in the original image.
 %
 %% Create counters
 % Probably you might need to create two counters, if you are going to use
 % two nested for loops. The counters are incremented inside the loops.
 %
-rad_counter = .. % Row counter
+rad_counter = 1; % Row counter
 
-kolumn_counter = .. % Column counter
+kolumn_counter = 1; % Column counter
 %
 %% Two nested for-loops
 %
-%for i= ..
-    %for j= ..
+for i= 1:2:rad
+    for j= 1:2:kolumn
         % here you have to figure out how to vary the variables i and j.
         % One way is to increment them by 2 in each loop, in order to address every
         % second row and column in the original image (in). You can use
@@ -77,8 +77,11 @@ kolumn_counter = .. % Column counter
         % careful with that. One of your counters has to be set to 1 again
         % after each loop, otherwise your code will be very slow and the
         % result will not be of the intended size.
-        
-    %end
+        ut(rad_counter, kolumn_counter) = mean(mean(in(i:i+1, j:j+1)));
+        kolumn_counter = kolumn_counter + 1;
+    end
+    rad_counter = rad_counter +1;
+    kolumn_counter = 1;
 %end
 %
 %% Test your code
