@@ -82,7 +82,7 @@ for i= 1:2:rad
     end
     rad_counter = rad_counter +1;
     kolumn_counter = 1;
-%end
+end
 %
 %% Test your code
 % Notice that your code has to work for a gray scale image of any size.

@@ -1,8 +1,8 @@
 a = 5;
 a/4;
 b = uint8(a);
-b/4
-b/12
+b/4;
+b/12;
 %%
 k = imread('kvarn.tif');
 whos k;
