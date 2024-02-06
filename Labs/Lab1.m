@@ -8,11 +8,11 @@ k = imread('kvarn.tif');
 whos k;
 k2 = double(k);
 whos k2;
-%imshow(k)
-imshow(k2)
+imshow(k);
+imshow(k2);
 
-%imshow(k/255)
-%imshow(k2/255)
+imshow(k/255)
+imshow(k2/255);
 
 %%
 map = ([1 0 0; 0 1 1; 0.5 0.2 0.3; 1 0 0.6])

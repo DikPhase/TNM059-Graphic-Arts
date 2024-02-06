@@ -64,6 +64,8 @@ function ut=samplaner(in)
 rad_counter = 1; % Row counter
 
 kolumn_counter = 1; % Column counter
+
+ut = zeros(rad/2, kolumn/2)
 %
 %% Two nested for-loops
 %
@@ -93,5 +95,5 @@ end
 % 1, so don't forget to do that before you call this function.
 % Test your code on at least on pne image, where either the row number or
 % the column number is an odd integer (for example kvarn_udda.tif). Explain how your code handle
-% images whos number of rows/columns are odd: (answer here as a comment).
+% images whos number of rows/columns are odd: ().
 %
