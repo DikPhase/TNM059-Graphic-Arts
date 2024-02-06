@@ -52,7 +52,7 @@ u4 = ((m6 + m7) >= 4 & m6 > 5)
 fargbild = imread('Butterfly.tif');
 fargbild = im2double(fargbild);
 imagesc(fargbild);
-mygrey = (fargbild(:, :, 1/3));
+mygrey = (fargbild(:,:,1) + fargbild(:,:,2) + fargbild(:,:,3)) / 3;
 imwrite(mygrey, 'mygrey.png');
 %%
 b61 = mygrey(1:2:end, 1:2:end);
@@ -60,7 +60,7 @@ imwrite(b61, 'b61.png')
 %%
 bild = imread('Butterfly.tif');
 bild = im2double(bild);
-mygrey = (bild(:, :, 3/1));
+mygrey = (fargbild(:,:,1) + fargbild(:,:,2) + fargbild(:,:,3)) / 3;
 b62 = samplaner(mygrey);
 imwrite(b62, "b62.png");
 %%
