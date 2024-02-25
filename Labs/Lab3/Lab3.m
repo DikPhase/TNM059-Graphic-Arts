@@ -63,7 +63,7 @@ figure(4)
 imshow(K)
 %% 4.2
 [L, a, b] = myrgb2lab(R, G, B);
-[R2, G2, B2] = mylab2rgb(L, a*3, b*3);
+[R2, G2, B2] = mylab2rgb(L, 0, b);
 figure(1)
 imshowrgb(R2, G2, B2)
 %% 5.1

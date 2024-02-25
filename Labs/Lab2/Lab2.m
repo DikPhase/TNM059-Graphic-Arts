@@ -62,11 +62,21 @@ imwrite(b36, 'b36.tif');
 b40 = imcdp(bild);
 imwrite(b40, 'b40.tif');
 %% 5.1
-mysnr(bild, b11)
-mysnr(bild, b31)
-mysnr(bild, b40)
-
-
+b51_b11 = mysnr(bild, bild - b11)
+b51_b31 = mysnr(bild, bild - b31)
+b51_b40 = mysnr(bild, bild - b40)
+imwrite(b51_b11, 'b51_b11.tif');
+imwrite(b51_b31, 'b51_b31.tif');
+imwrite(b51_b40, 'b51_b40.tif');
+%% 5.2
+snr_filter()
+%% 5.3
+b53_b11 = QNS(bild, b11);
+b53_b31 = QNS(bild, b31);
+b53_b40 = QNS(bild, b40);
+imwrite(b53_b11, 'b53_b11.tif');
+imwrite(b53_b31, 'b53_b31.tif');
+imwrite(b53_b40, 'b53_b40.tif');
 
 
 
